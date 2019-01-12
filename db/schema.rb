@@ -10,13 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_10_113916) do
+ActiveRecord::Schema.define(version: 2019_01_12_114827) do
 
   # These are extensions that must be enabled in order to support this database
-  enable_extension "pgcrypto"
   enable_extension "plpgsql"
 
-  create_table "addresses", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+  create_table "addresses", force: :cascade do |t|
     t.string "state"
     t.integer "postcode"
     t.string "full_address"
@@ -28,17 +27,17 @@ ActiveRecord::Schema.define(version: 2019_01_10_113916) do
     t.index ["property_id"], name: "index_addresses_on_property_id"
   end
 
-  create_table "features", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+  create_table "features", force: :cascade do |t|
   end
 
-  create_table "lgas", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+  create_table "lgas", force: :cascade do |t|
     t.string "code"
     t.string "name"
     t.string "long_name"
   end
 
-  create_table "properties", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
-    t.integer "council_property_number"
+  create_table "properties", force: :cascade do |t|
+    t.bigint "council_property_number"
     t.decimal "longitude"
     t.decimal "latitude"
     t.bigint "lga_id"
