@@ -10,19 +10,18 @@ Things you may want to cover:
 
 * Configuration
 
-bundle install
-foreman start
+- bundle install
+- foreman start
 
 * Database setup
 
-rails db:create
-rails db:migrate
-rails db:seed
+- rails db:create
+- rails db:migrate
+- rails db:seed
 
 * How to run the test suite
 
-RAILS_ENV=test rails db:create
-RAILS_ENV=test rails db:migrate
-RAILS_ENV=test rails db:seed
-
-rspec spec/
+- RAILS_ENV=test rails db:create
+- RAILS_ENV=test rails db:migrate
+- RAILS_ENV=test rails db:seed
+- rspec spec/
