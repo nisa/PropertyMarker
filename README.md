@@ -6,19 +6,23 @@ application up and running.
 Things you may want to cover:
 
 * Ruby version
-
-* System dependencies
+2.3.1
 
 * Configuration
 
-* Database creation
+bundle install
+foreman start
 
-* Database initialization
+* Database setup
+
+rails db:create
+rails db:migrate
+rails db:seed
 
 * How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+RAILS_ENV=test rails db:create
+RAILS_ENV=test rails db:migrate
+RAILS_ENV=test rails db:seed
 
-* Deployment instructions
-
-* ...
+rspec spec/

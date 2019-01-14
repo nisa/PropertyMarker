@@ -1,0 +1,10 @@
+.selected-property{
+  position: absolute;
+  right: 0;
+  width: 18rem;
+  background-color: #fff;
+  top: 30;
+  padding: 10px;
+}
+
+
